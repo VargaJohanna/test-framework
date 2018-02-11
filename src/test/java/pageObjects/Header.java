@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Header {
     private WebDriver driver;
-    private ActionMethods actionMethods = new ActionMethods();
 
     public Header(WebDriver driver) {
         this.driver = driver;
@@ -28,7 +27,7 @@ public class Header {
     private WebElement menuOnHover;
 
     public Header hoverTools(WebDriverWait wait) {
-        actionMethods.moveToElement(driver, toolsMenu);
+        ActionMethods.getInstance().moveToElement(driver, toolsMenu);
         wait.until(ExpectedConditions.visibilityOf(menuOnHover));
         return new Header(driver);
     }
