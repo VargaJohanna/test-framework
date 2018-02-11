@@ -11,7 +11,7 @@ public class Header {
     private WebDriver driver;
     private ActionMethods actionMethods = new ActionMethods();
 
-    private Header(WebDriver driver) {
+    public Header(WebDriver driver) {
         this.driver = driver;
     }
 

@@ -51,7 +51,7 @@ task cucumberTests() {
 //                    '--plugin', 'junit:test-reports/cucumberTests.xml',
 //                    '--plugin', 'html:test-reports/cucumberTests',
 //                    '--plugin', 'json:test-reports/cucumberTests.json',
-                    '--glue', 'java/stepDefinitions', 'java/features',
+                    '--glue', 'stepDefinitions', 'java/features',
                     '--tags', '~@ignore']
         }
     }
