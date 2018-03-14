@@ -8,11 +8,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Header {
-//    private WebDriver driver;
-//
-//    public Header(WebDriver driver) {
-//        this.driver = driver;
-//    }
+    private WebDriver driver;
+
+    public Header(WebDriver driver) {
+        this.driver = driver;
+    }
 
     @FindBy(css = ".header")
     private WebElement header;
@@ -29,12 +29,12 @@ public class Header {
     public Header hoverTools(WebDriver driver, WebDriverWait wait) {
         ActionMethods.getInstance().moveToElement(driver, toolsMenu);
         wait.until(ExpectedConditions.visibilityOf(menuOnHover));
-        return new Header();
+        return new Header(driver);
     }
 
     public IdeaPage clickIdea() {
         ideaLink.click();
-        return new IdeaPage();
+        return new IdeaPage(driver);
     }
 
 }
