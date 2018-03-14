@@ -21,7 +21,7 @@ public class Header {
     private WebElement toolsMenu;
 
     @FindBy(css = "a[href='/idea/?fromMenu']")
-    private WebElement ideaLink;
+    public WebElement ideaLink;
 
     @FindBy(css = ".js-header-popover-hover._active")
     private WebElement menuOnHover;

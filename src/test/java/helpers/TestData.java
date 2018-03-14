@@ -1,14 +1,14 @@
 package helpers;
 
 public class TestData {
-    public String gyilok;
+    public String menuText;
 
-    public String getGyilok() {
-        return gyilok;
+    public String getMenuText() {
+        return menuText;
     }
 
-    public void setGyilok(String gyilok) {
-        this.gyilok = gyilok;
+    public void setMenuText(String menuText) {
+        this.menuText = menuText;
     }
 
 }

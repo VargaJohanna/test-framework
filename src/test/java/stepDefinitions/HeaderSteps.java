@@ -10,24 +10,28 @@ import static org.hamcrest.CoreMatchers.containsString;
 import helpers.TestData;
 import org.openqa.selenium.support.PageFactory;
 import pageObjects.Header;
+import pageObjects.IdeaPage;
 
 public class HeaderSteps implements En {
     public TestData data;
     private Header header = PageFactory.initElements(getDriver(), Header.class);
+    IdeaPage idea = PageFactory.initElements(getDriver(), IdeaPage.class);
 
     public HeaderSteps(TestData data) {
         this.data = data;
         Given("^that I click on the Tools menu$", () -> {
             header.hoverTools(getDriver(), getWait());
-            data.setGyilok("Szeged");
         });
 
         When("^I click on the IntelliJ IDEA item$", () -> {
+            data.setMenuText(header.ideaLink.getText());
             header.clickIdea();
-            System.out.println(data.getGyilok());
         });
 
-        Then("^I'm taken to the idea page", () -> assertThat(getDriver().getCurrentUrl(),
-                containsString("/idea/?fromMenu")));
+        Then("^I'm taken to the idea page", () -> {
+            assertThat(getDriver().getCurrentUrl(),
+                    containsString("/idea/?fromMenu"));
+            assertThat(idea.secondaryTitle.getText(), containsString(data.getMenuText()));
+        });
     }
 }

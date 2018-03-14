@@ -21,6 +21,9 @@ public class IdeaPage {
     @FindBy(css = ".html5-video-player.playing-mode")
     public WebElement playingVideo;
 
+    @FindBy(css = ".header-secondary__title")
+    public WebElement secondaryTitle;
+
     public IdeaPage playVideo() {
         playButton.click();
         return new IdeaPage(driver);
