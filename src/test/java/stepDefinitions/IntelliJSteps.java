@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java8.En;
 import helpers.DriverProvider;
 import helpers.TestData;
@@ -30,6 +31,9 @@ public class IntelliJSteps implements En {
             getWait().until(ExpectedConditions.visibilityOf(idea.iframe));
             getDriver().switchTo().frame(0);
             getWait().until(ExpectedConditions.visibilityOf(idea.playingVideo));
+        });
+        When("^I click on the download button$", () -> {
+            idea.clickDarkDownloadButton();
         });
     }
 }

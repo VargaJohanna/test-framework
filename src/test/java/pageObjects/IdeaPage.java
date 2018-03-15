@@ -24,8 +24,16 @@ public class IdeaPage {
     @FindBy(css = ".header-secondary__title")
     public WebElement secondaryTitle;
 
+    @FindBy(css = ".button-with-note__button._dark")
+        public WebElement downloadButtonDark;
+
     public IdeaPage playVideo() {
         playButton.click();
         return new IdeaPage(driver);
+    }
+
+    public DownloadPage clickDarkDownloadButton() {
+        downloadButtonDark.click();
+        return new DownloadPage(driver);
     }
 }

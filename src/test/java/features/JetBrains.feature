@@ -9,3 +9,8 @@ Feature: Collection of tests
     Given that I'm on the IntelliJ Idea page
     When I click on the video
     Then the video plays
+
+  Scenario: The download button should take me to the download page
+    Given that I'm on the IntelliJ Idea page
+    When I click on the download button
+    Then I'm taken to the download page
